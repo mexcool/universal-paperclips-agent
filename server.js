@@ -44,9 +44,12 @@ fs.watchFile(strategyPath, { interval: 2000 }, loadStrategy);
 function callClaudeOpenClaw(stateJson) {
   return new Promise((resolve, reject) => {
     const message = strategyPrompt + '\n\nGame state:\n' + stateJson + '\n\nReturn ONLY valid JSON with "actions" array and "thought" string. No markdown fences.';
+    // Use a unique session ID per call so each decision is stateless
+    // (avoids context overflow from accumulating game history)
+    const sessionId = 'paperclips-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7);
     const args = [
       'agent',
-      '--session-id', 'paperclips-agent',
+      '--session-id', sessionId,
       '--message', message,
       '--json',
     ];
