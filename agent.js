@@ -386,6 +386,7 @@
       if (tickCount % 5 === 0) {
         addLog('Paused', 'watching silently...', 'wait');
       }
+      setTimeout(tick, TICK_INTERVAL); // keep the loop alive while paused
       return;
     }
 
