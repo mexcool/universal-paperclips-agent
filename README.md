@@ -76,6 +76,10 @@ Requires Playwright (`npm install` installs it as a dev dependency). The test su
 - Hits the `/decide` endpoint
 - Waits 8 seconds to confirm the agent is ticking
 
+## Acknowledgments
+
+The original [Universal Paperclips](https://www.decisionproblem.com/paperclips/) game was created by [Frank Lantz](https://en.wikipedia.org/wiki/Frank_Lantz) in 2017. The game files (`index.html`, `main.js`, `globals.js`, `projects.js`, `combat.js`, `interface.css`, and associated assets) are included in this repository for convenience and remain the intellectual property of Frank Lantz.
+
 ## License
 
-MIT
+The agent code (`server.js`, `agent.js`, `strategy.md`) is released under the [MIT License](LICENSE). The original game files are **not** covered by this license.
