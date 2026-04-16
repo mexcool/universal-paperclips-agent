@@ -20,11 +20,11 @@ const MIME_TYPES = {
 const { execFile } = require('child_process');
 
 // Detect LLM provider:
-// 1. LLM_PROVIDER env var (explicit override)
-// 2. ANTHROPIC_API_KEY present → use 'anthropic'
-// 3. Default to 'openclaw'
-const LLM_PROVIDER = process.env.LLM_PROVIDER
-  || (process.env.ANTHROPIC_API_KEY ? 'anthropic' : 'openclaw');
+// 1. LLM_PROVIDER in .env or environment (explicit — always wins)
+// 2. Default to 'openclaw'
+// Note: ANTHROPIC_API_KEY being present does NOT auto-select anthropic.
+// Set LLM_PROVIDER=anthropic explicitly if you want direct API access.
+const LLM_PROVIDER = process.env.LLM_PROVIDER || 'openclaw';
 
 // Load strategy.md once at startup, reload on change
 let strategyPrompt = '';
