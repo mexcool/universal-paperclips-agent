@@ -62,7 +62,7 @@ window.agentPause = true;
 
 ## Strategy
 
-The agent's behavior is driven by `strategy.md`. Edit this file while the server is running — it's reloaded automatically every 2 seconds.
+The agent's behavior is driven by `strategy.md`. Edit this file while the server is running — it's reloaded automatically every 3 seconds.
 
 ## Testing
 
