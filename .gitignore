@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.png
+!/mobile-title.png
+npm-debug.log*
+.DS_Store
